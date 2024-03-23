@@ -146,14 +146,14 @@ r_class:
 
 static void exit_device_file(void)
 {
- 	    device_destroy(myclass, dev);
+ 	device_destroy(myclass, dev);
     	class_destroy(myclass);    
     	cdev_del(&mycdev);
     	unregister_chrdev_region(dev, 1);
     	gpio_free(GPIO_30);
     	gpio_free(GPIO_31);
     	gpio_free(GPIO_48);
-	    pr_info("Removed this driver!\n");
+	pr_info("Removed this driver!\n");
 }
 
 module_init(init_device_file);
